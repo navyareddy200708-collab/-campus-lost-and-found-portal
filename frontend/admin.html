@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Campus Lost and Found</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Campus Lost and Found</h1>
+
+                <h2>Admin Dashboard</h2>
+
+                <p>
+                    Manage reported items and claims
+                </p>
+
+            </div>
+
+
+            <button id="adminLogoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <a href="index.html" class="button-link">
+                Home
+            </a>
+
+        </div>
+
+
+        <hr>
+
+
+        <section>
+
+            <h2>Statistics</h2>
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Listings
+                    </h3>
+
+                    <p id="totalListings">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Claims
+                    </h3>
+
+                    <p id="totalClaims">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Pending Claims
+                    </h3>
+
+                    <p id="pendingClaims">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <hr>
+
+
+        <section>
+
+            <h2>All Listings</h2>
+
+            <div id="adminListings"></div>
+
+        </section>
+
+
+        <hr>
+
+
+        <section>
+
+            <h2>All Claims</h2>
+
+            <div id="adminClaims"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

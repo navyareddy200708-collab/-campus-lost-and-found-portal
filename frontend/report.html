@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Item - Campus Lost and Found</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <div class="form-card">
+
+            <h1>Campus Lost and Found</h1>
+
+            <h2>Report Lost / Found Item</h2>
+
+
+            <form id="reportForm">
+
+                <label for="itemName">
+                    Item Name
+                </label>
+
+                <input type="text" id="itemName" placeholder="Example: Black Wallet" required>
+
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Books">
+                        Books
+                    </option>
+
+                    <option value="Documents">
+                        Documents
+                    </option>
+
+                    <option value="Accessories">
+                        Accessories
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea id="description" placeholder="Describe the item" required></textarea>
+
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input type="text" id="location" placeholder="Example: Library" required>
+
+
+                <label for="date">
+                    Date
+                </label>
+
+                <input type="date" id="date" required>
+
+
+                <label for="type">
+                    Listing Type
+                </label>
+
+                <select id="type" required>
+
+                    <option value="">
+                        Select Type
+                    </option>
+
+                    <option value="lost">
+                        Lost
+                    </option>
+
+                    <option value="found">
+                        Found
+                    </option>
+
+                </select>
+
+
+                <label for="image">
+                    Image URL
+                    <span class="optional">
+                        (Optional)
+                    </span>
+                </label>
+
+                <input type="text" id="image" placeholder="Paste image URL if available">
+
+
+                <button type="submit">
+                    Report Item
+                </button>
+
+            </form>
+
+
+            <p id="reportMessage"></p>
+
+
+            <p>
+                <a href="dashboard.html">
+                    Back to Dashboard
+                </a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
