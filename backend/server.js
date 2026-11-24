@@ -18,15 +18,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, "../frontend")));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/items", itemRoutes);
 app.use("/api/claims", claimRoutes);
 app.use("/api/admin", adminClaimRoutes);
 
+// Fallback to frontend index.html for root route
 app.get("/", (req, res) => {
-    res.json({
-        message: "Campus Lost and Found API is running"
-    });
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 mongoose

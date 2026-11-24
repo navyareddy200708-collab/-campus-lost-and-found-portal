@@ -2,130 +2,86 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Admin Dashboard - Campus Lost and Found</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body id="adminPage">
 
-<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="brand-wrapper">
+                <div class="brand-icon">L&amp;F</div>
+                <div>
+                    <h1><a href="index.html">Campus Lost &amp; Found</a></h1>
+                </div>
+                <span class="brand-badge">Admin Panel</span>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="admin.html" class="active">Admin Dashboard</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="container">
 
         <div class="dashboard-header">
-
             <div>
-
-                <h1>Campus Lost and Found</h1>
-
-                <h2>Admin Dashboard</h2>
-
-                <p>
-                    Manage reported items and claims
-                </p>
-
+                <h2>Administrator Portal</h2>
+                <p>Manage all campus listings, review student claims, and approve verifications.</p>
             </div>
-
-
-            <button id="adminLogoutBtn">
-                Logout
-            </button>
-
+            <button id="adminLogoutBtn" type="button">Logout</button>
         </div>
-
 
         <div class="dashboard-actions">
-
-            <a href="index.html" class="button-link">
-                Home
-            </a>
-
+            <a href="index.html" class="button-link">Browse Main Site</a>
         </div>
 
-
         <hr>
 
-
         <section>
-
-            <h2>Statistics</h2>
-
+            <h2>Overview Statistics</h2>
             <div class="stats">
-
                 <div class="stat-card">
-
-                    <h3>
-                        Total Listings
-                    </h3>
-
-                    <p id="totalListings">
-                        0
-                    </p>
-
+                    <h3>Total Listings</h3>
+                    <p id="totalListings">0</p>
                 </div>
 
-
                 <div class="stat-card">
-
-                    <h3>
-                        Total Claims
-                    </h3>
-
-                    <p id="totalClaims">
-                        0
-                    </p>
-
+                    <h3>Total Claims</h3>
+                    <p id="totalClaims">0</p>
                 </div>
 
-
                 <div class="stat-card">
-
-                    <h3>
-                        Pending Claims
-                    </h3>
-
-                    <p id="pendingClaims">
-                        0
-                    </p>
-
+                    <h3>Pending Claims</h3>
+                    <p id="pendingClaims">0</p>
                 </div>
-
             </div>
-
         </section>
-
 
         <hr>
 
-
         <section>
-
-            <h2>All Listings</h2>
-
+            <h2>All Reported Campus Listings</h2>
             <div id="adminListings"></div>
-
+            <div id="adminItems"></div>
         </section>
-
 
         <hr>
 
-
         <section>
-
-            <h2>All Claims</h2>
-
+            <h2>All Submitted Student Claims</h2>
             <div id="adminClaims"></div>
-
         </section>
 
     </main>
 
+    <footer class="footer">
+        <p>&copy; 2026 Campus Lost and Found &bull; College Student Project</p>
+    </footer>
 
     <script src="script.js"></script>
 

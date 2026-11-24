@@ -2,78 +2,63 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dashboard - Campus Lost and Found</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body id="dashboardPage">
 
-<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="brand-wrapper">
+                <div class="brand-icon">L&amp;F</div>
+                <h1><a href="index.html">Campus Lost &amp; Found</a></h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="report.html" class="nav-cta">+ Report Item</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="container">
 
         <div class="dashboard-header">
-
             <div>
-
-                <h1>Campus Lost and Found</h1>
-
                 <h2>User Dashboard</h2>
-
-                <p id="welcomeMessage"></p>
-
+                <p id="welcomeMessage">Loading user session...</p>
             </div>
-
-
-            <button id="logoutBtn">
-                Logout
-            </button>
-
+            <button id="logoutBtn" type="button">Logout</button>
         </div>
-
 
         <div class="dashboard-actions">
-
-            <a href="index.html" class="button-link">
-                Home
-            </a>
-
-
-            <a href="report.html" class="button-link">
-                Report Item
-            </a>
-
+            <a href="index.html" class="button-link">Browse All Listings</a>
+            <a href="report.html" class="button-link">+ Report New Item</a>
         </div>
-
 
         <hr>
 
-
         <section>
-
-            <h2>My Listings</h2>
-
+            <h2>My Reported Listings</h2>
             <div id="myListings"></div>
-
+            <div id="myItems"></div>
         </section>
 
+        <hr>
 
         <section>
-
-            <h2>My Claims</h2>
-
+            <h2>My Item Claims</h2>
             <div id="myClaims"></div>
-
         </section>
 
     </main>
 
+    <footer class="footer">
+        <p>&copy; 2026 Campus Lost and Found &bull; College Student Project</p>
+    </footer>
 
     <script src="script.js"></script>
 

@@ -4,176 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Campus Lost and Found</title>
-
+    <title>Campus Lost &amp; Found Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header class="header">
-
         <div class="header-content">
-
-            <h1>Campus Lost and Found</h1>
+            <div class="brand-wrapper">
+                <div class="brand-icon">L&amp;F</div>
+                <div>
+                    <h1><a href="index.html">Campus Lost &amp; Found</a></h1>
+                </div>
+                <span class="brand-badge">Student Portal</span>
+            </div>
 
             <nav>
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="login.html">Login</a>
                 <a href="register.html">Register</a>
-                <a href="report.html">Report Item</a>
+                <a href="report.html" class="nav-cta">+ Report Item</a>
                 <a href="dashboard.html">Dashboard</a>
             </nav>
-
         </div>
-
     </header>
-
 
     <main class="container">
 
         <section class="hero">
-
-            <h2>Find What You Lost</h2>
-
-            <p>
-                Report lost or found items and help reconnect students with their belongings.
-            </p>
-
+            <div class="hero-text">
+                <h2>Campus Lost &amp; Found Portal</h2>
+                <p>
+                    A database-driven system to report, search, and claim misplaced belongings across lecture halls, labs, library, and canteen.
+                </p>
+                <div class="hero-actions">
+                    <a href="report.html" class="hero-btn hero-btn-primary">+ Report an Item</a>
+                    <a href="#searchSection" class="hero-btn hero-btn-secondary">Search Listings</a>
+                </div>
+            </div>
+            <div class="live-stats-badge" id="heroLiveBadge">
+                <span class="live-dot"></span>
+                <span id="heroLiveCount">Connected to Database</span>
+            </div>
         </section>
 
+        <!-- Category Quick Filter Chips (Advanced UI) -->
+        <section class="quick-chips-section">
+            <span class="chips-label">Quick Filter:</span>
+            <div class="chips-container" id="categoryChips">
+                <button type="button" class="chip active" data-cat="">All</button>
+                <button type="button" class="chip" data-cat="Electronics">Electronics</button>
+                <button type="button" class="chip" data-cat="Books">Books</button>
+                <button type="button" class="chip" data-cat="Documents">Documents</button>
+                <button type="button" class="chip" data-cat="Accessories">Accessories</button>
+                <button type="button" class="chip" data-cat="Other">Other</button>
+            </div>
+        </section>
 
-        <section>
-
-            <h2>Search Items</h2>
-
+        <section id="searchSection">
+            <h2>Find Reported Items</h2>
             <div class="search-box">
-
                 <input type="text" id="searchInput" placeholder="Search by item name or description">
+                <input type="hidden" id="search">
 
                 <select id="categoryFilter">
-
-                    <option value="">
-                        All Categories
-                    </option>
-
-                    <option value="Electronics">
-                        Electronics
-                    </option>
-
-                    <option value="Books">
-                        Books
-                    </option>
-
-                    <option value="Documents">
-                        Documents
-                    </option>
-
-                    <option value="Accessories">
-                        Accessories
-                    </option>
-
-                    <option value="Other">
-                        Other
-                    </option>
-
+                    <option value="">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Books">Books</option>
+                    <option value="Documents">Documents</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Other">Other</option>
                 </select>
 
-
-                <input type="text" id="locationFilter" placeholder="Location">
-
+                <input type="text" id="locationFilter" placeholder="Location (e.g. Library)">
 
                 <select id="typeFilter">
-
-                    <option value="">
-                        All Types
-                    </option>
-
-                    <option value="lost">
-                        Lost
-                    </option>
-
-                    <option value="found">
-                        Found
-                    </option>
-
+                    <option value="">All Types</option>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
                 </select>
-
 
                 <select id="dateSort">
-
-                    <option value="">
-                        Sort by Date
-                    </option>
-
-                    <option value="newest">
-                        Newest First
-                    </option>
-
-                    <option value="oldest">
-                        Oldest First
-                    </option>
-
+                    <option value="">Sort by Date</option>
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
                 </select>
 
-
-                <button id="searchBtn">
-                    Search
-                </button>
-
+                <button type="button" id="searchBtn">Search</button>
             </div>
-
         </section>
-
 
         <section>
-
-            <h2>Recent Items</h2>
-
+            <div class="section-header-bar">
+                <h2>Campus Listings</h2>
+                <div class="layout-counter" id="itemCounterBadge">Loading records...</div>
+            </div>
+            <div id="itemsContainer"></div>
             <div id="itemsList"></div>
-
         </section>
 
-
+        <!-- Inline Claim Form Section -->
         <section id="claimSection" class="form-section" style="display: none;">
-
-            <h2>Submit Claim</h2>
-
+            <h2>Submit Verification Claim</h2>
+            <p>Please enter specific details proving your ownership (unique markings, contents, serial numbers, colors):</p>
             <form id="claimForm">
-
                 <input type="hidden" id="claimItemId">
 
+                <div class="form-group">
+                    <label for="claimMessage">Claim Verification Details</label>
+                    <textarea id="claimMessage" placeholder="Explain why this item belongs to you..." required></textarea>
+                </div>
 
-                <label for="claimMessage">
-                    Claim Message
-                </label>
-
-                <textarea id="claimMessage" placeholder="Explain why this item belongs to you" required></textarea>
-
-
-                <button type="submit">
-                    Submit Claim
-                </button>
-
+                <div class="claim-form-actions">
+                    <button type="submit">Submit Claim</button>
+                    <button type="button" class="btn-cancel" onclick="document.getElementById('claimSection').style.display='none'">Cancel</button>
+                </div>
             </form>
-
-
             <p id="claimMessageResult"></p>
-
         </section>
 
     </main>
 
+    <!-- Quick Item Details Modal (Advanced Pure JS ES6+) -->
+    <div id="itemDetailModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalItemTitle">Item Details</h3>
+                <button type="button" class="modal-close" onclick="closeItemModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalItemBody"></div>
+        </div>
+    </div>
 
     <footer class="footer">
-
-        <p>
-            © 2026 Campus Lost and Found
-        </p>
-
+        <p>&copy; 2026 Campus Lost and Found &bull; College Student Project</p>
     </footer>
-
 
     <script src="script.js"></script>
 
