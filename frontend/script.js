@@ -78,7 +78,7 @@ const loginUser = async () => {
     }
 
     try {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        const response = await fetch(`https://campus-lost-and-found-portal-u94z.onrender.com/api/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -126,7 +126,7 @@ const registerUser = async () => {
     }
 
     try {
-        const response = await fetch(`${API_URL}/auth/register`, {
+        const response = await fetch(`https://campus-lost-and-found-portal-u94z.onrender.com/api/auth/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -180,7 +180,7 @@ const reportItem = async () => {
     }
 
     try {
-        const response = await fetch(`${API_URL}/items`, {
+        const response = await fetch(`https://campus-lost-and-found-portal-u94z.onrender.com/api/items`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -226,7 +226,7 @@ const loadItems = async () => {
     itemsContainer.innerHTML = "<p class='empty-state'>Loading campus listings...</p>";
 
     try {
-        const response = await fetch(`${API_URL}/items`);
+        const response = await fetch(`$https://campus-lost-and-found-portal-u94z.onrender.com/api/items`);
         const items = await response.json();
 
         displayItems(items);
@@ -478,7 +478,7 @@ const submitClaim = async () => {
     }
 
     try {
-        const response = await fetch(`${API_URL}/claims`, {
+        const response = await fetch(`https://campus-lost-and-found-portal-u94z.onrender.com/api/claims`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
